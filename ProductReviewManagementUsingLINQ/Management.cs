@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ProductReviewManagementUsingLINQ
 {
-    class Management
+    class ReviewManagement
     {
         public readonly DataTable dataTable = new DataTable();
         public void TopThreeHighRatingProduct(List<ProductReview> productReviews)
@@ -31,5 +31,16 @@ namespace ProductReviewManagementUsingLINQ
                 Console.WriteLine("ProductId {0} UserId {1} Rating {2} Review {3} IsLike {4} ", revew.ProductID, revew.UserID, revew.Rating, revew.Review, revew.IsLike);
             }
         }
+        public void CountOfReview_For_ProductId(List<ProductReview> productReviews)
+        {
+            var recordData = (from record in productReviews
+                              group record by record.ProductID into grouP
+                              select new { PersonID = grouP.Key, reviewCount = grouP.Count() });
+               foreach(var record in recordData)
+               {
+                Console.WriteLine(" ProductId {0} Review {1} ",record.PersonID,record.reviewCount);
+               }
+        }
+
     }
 }

@@ -35,11 +35,14 @@ namespace ProductReviewManagementUsingLINQ
             productReviews.Add(new ProductReview(10, 15, 5, "Good", true));
             //UC-1
             //UC-2
-            Management management = new Management();
-            management.TopThreeHighRatingProduct(productReviews);
+            ReviewManagement manage = new ReviewManagement();
+            manage.TopThreeHighRatingProduct(productReviews);
             //UC-3
             Console.WriteLine("\n");
-            management.RatingGreaterThan_Three_ProductId(productReviews);
+            manage.RatingGreaterThan_Three_ProductId(productReviews);
+            //UC - 4
+            manage.CountOfReview_For_ProductId(productReviews);
+
         }
         
         
