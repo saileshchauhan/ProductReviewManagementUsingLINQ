@@ -65,6 +65,8 @@ namespace ProductReviewManagementUsingLINQ
                 Console.WriteLine("ProductId {0} Rating {1} ",record.ProductID,record.Rating);
             }
         }
+        //UC-7
+        //uc-7 Problem Statement is similar to uc-5.
 
     }
 }

@@ -40,7 +40,7 @@ namespace ProductReviewManagementUsingLINQ
             //UC-3
             Console.WriteLine("\n");
             manage.RatingGreaterThan_Three_ProductId(productReviews);
-            //UC - 4
+            //UC-4
             manage.CountOfReview_For_ProductId(productReviews);
             //UC-5
             manage.Retrieve_OnlyProductIdWithReview(productReviews);
