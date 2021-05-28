@@ -42,10 +42,10 @@ namespace ProductReviewManagementUsingLINQ
             manage.RatingGreaterThan_Three_ProductId(productReviews);
             //UC - 4
             manage.CountOfReview_For_ProductId(productReviews);
-
+            //UC-5
+            manage.Retrieve_OnlyProductIdWithReview(productReviews);
+            //UC-6
+            manage.Skip_TopFiveRecords(productReviews);
         }
-        
-        
-
     }
 }
