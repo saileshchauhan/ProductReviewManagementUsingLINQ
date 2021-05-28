@@ -13,11 +13,11 @@ namespace ProductReviewManagementUsingLINQ
             { new ProductReview(1,7,3,"Suggest Buy",true)};
 
             productReviews.Add(new ProductReview(2,  15, 1, "Defective", false));
-            productReviews.Add(new ProductReview(5,  15, 4, "Good", true));
+            productReviews.Add(new ProductReview(5,  15, 4, "product is nice", true));
             productReviews.Add(new ProductReview(78, 23, 2, "Suitable", false));
             productReviews.Add(new ProductReview(2,  21, 5, "Good", false));
             productReviews.Add(new ProductReview(3,  16, 1, "Defective", false));
-            productReviews.Add(new ProductReview(1, 19, 5, "Excellent", false));
+            productReviews.Add(new ProductReview(1, 19, 5, "nice product", false));
             productReviews.Add(new ProductReview(2,  17, 3, "Average", false));
             productReviews.Add(new ProductReview(101,15, 5, "Happy", false));
             productReviews.Add(new ProductReview(13, 56, 5, "Happy", false));
@@ -52,6 +52,10 @@ namespace ProductReviewManagementUsingLINQ
                 //UC - 8
                 DataTableImplementation dataTable = new DataTableImplementation();
                 dataTable.AddRecords_To_DataTabe(productReviews);
+                ////UC-9
+                //dataTable.PrintRecords_With_IsLike_TrueFromDataTabe();
+                ////UC-11
+                dataTable.AllRecords_ReviewContainsNice();
             }
             catch(Exception exception)
             {

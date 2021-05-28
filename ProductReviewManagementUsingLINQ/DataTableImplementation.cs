@@ -37,5 +37,20 @@ namespace ProductReviewManagementUsingLINQ
                 Console.WriteLine(productid);
             }
         }
+        //UC-11
+        public void AllRecords_ReviewContainsNice()
+        {
+            var dataRecord = from record in table.AsEnumerable()
+                             where record.Field<string>("Review").Contains("nice")
+                             select new
+                             {
+                                 product = record.Field<int>("Product Id")
+                             };
+            foreach (var productid in dataRecord)
+            {
+                Console.WriteLine(productid);
+            }
+        }
+
     }
 }
