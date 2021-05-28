@@ -17,19 +17,19 @@ namespace ProductReviewManagementUsingLINQ
             productReviews.Add(new ProductReview(78, 23, 2, "Suitable", true));
             productReviews.Add(new ProductReview(2,  21, 5, "Good", true));
             productReviews.Add(new ProductReview(3,  16, 1, "Defective", false));
-            productReviews.Add(new ProductReview(13, 19, 5, "Excellent", true));
+            productReviews.Add(new ProductReview(1, 19, 5, "Excellent", true));
             productReviews.Add(new ProductReview(2,  17, 3, "Average", true));
             productReviews.Add(new ProductReview(101,15, 5, "Happy", true));
             productReviews.Add(new ProductReview(13, 56, 5, "Happy", true));
             productReviews.Add(new ProductReview(6,  107, 1, "Defective", false));
-            productReviews.Add(new ProductReview(9,  14, 5, "Excellent", true));
+            productReviews.Add(new ProductReview(4,  14, 5, "Excellent", true));
             productReviews.Add(new ProductReview(6,  15, 1, "Defective", false));
             productReviews.Add(new ProductReview(17, 16, 5, "Excellent", true));
             productReviews.Add(new ProductReview(33, 14, 3, "Average", false));
             productReviews.Add(new ProductReview(13, 14, 7, "Excellent", true));
             productReviews.Add(new ProductReview(5,  55, 3, "Average", true));
             productReviews.Add(new ProductReview(17, 16, 1, "Defective", false));
-            productReviews.Add(new ProductReview(11, 10, 6, "Excellent", true));
+            productReviews.Add(new ProductReview(9, 10, 6, "Excellent", true));
             productReviews.Add(new ProductReview(6, 56, 2, "Poor", false));
             productReviews.Add(new ProductReview(6, 11, 3, "Average", false));
             productReviews.Add(new ProductReview(10, 15, 5, "Good", true));
@@ -37,7 +37,9 @@ namespace ProductReviewManagementUsingLINQ
             //UC-2
             Management management = new Management();
             management.TopThreeHighRatingProduct(productReviews);
-            //UC-2
+            //UC-3
+            Console.WriteLine("\n");
+            management.RatingGreaterThan_Three_ProductId(productReviews);
         }
         
         
