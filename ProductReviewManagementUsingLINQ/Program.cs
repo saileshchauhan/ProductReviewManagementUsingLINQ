@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProductReviewManagementUsingLINQ
 {
@@ -33,6 +34,13 @@ namespace ProductReviewManagementUsingLINQ
             productReviews.Add(new ProductReview(6, 11, 3, "Average", false));
             productReviews.Add(new ProductReview(10, 15, 5, "Good", true));
             //UC-1
+            //UC-2
+            Management management = new Management();
+            management.TopThreeHighRatingProduct(productReviews);
+            //UC-2
         }
+        
+        
+
     }
 }
