@@ -10,6 +10,7 @@ namespace ProductReviewManagementUsingLINQ
     class DataTableImplementation
     {
         DataTable table = new DataTable();
+        //UC-8
         public void AddRecords_To_DataTabe(List<ProductReview> productReviews)
         {
             table.Columns.Add("Product Id", typeof(int));
@@ -20,6 +21,20 @@ namespace ProductReviewManagementUsingLINQ
             foreach (var records in productReviews)
             {
                 table.Rows.Add(records.ProductID, records.UserID, records.Rating, records.Review, records.IsLike);
+            }
+        }
+        //UC-9
+        public void PrintRecords_With_IsLike_TrueFromDataTabe()
+        {
+            var dataRecord = from record in table.AsEnumerable()
+                             where record.Field<bool>("IsLike") == true
+                             select new
+                             {
+                                 product = record.Field<int>("Product Id")
+                             };
+            foreach (var productid in dataRecord)
+            {
+                Console.WriteLine(productid);
             }
         }
     }
