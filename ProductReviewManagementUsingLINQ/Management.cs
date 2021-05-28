@@ -8,8 +8,9 @@ namespace ProductReviewManagementUsingLINQ
 {
     class ReviewManagement
     {
+        DataTable table = new DataTable();
+       
         //UC-1
-        public readonly DataTable dataTable = new DataTable();
         public void TopThreeHighRatingProduct(List<ProductReview> productReviews)
         {
             var recordData = (from review in productReviews
