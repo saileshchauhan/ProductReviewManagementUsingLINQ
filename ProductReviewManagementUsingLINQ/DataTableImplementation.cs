@@ -37,6 +37,21 @@ namespace ProductReviewManagementUsingLINQ
                 Console.WriteLine(productid);
             }
         }
+        //UC-10
+        public void AvearageRatingOfEachProductId()
+        {
+            var dataRecord = from record in table.AsEnumerable()
+                             group record by record.Field<int>("Product Id") into g
+                             select new
+                             {
+                                 product = g.Key,
+                                 averageRating = g.Average(A=>A.Field<double>("Rating"))
+                             };
+            foreach(var record in dataRecord)
+            {
+                Console.WriteLine("Product Id {0} Average rating {1} ",record.product,record.averageRating);
+            }
+        }
         //UC-11
         public void AllRecords_ReviewContainsNice()
         {
@@ -51,6 +66,21 @@ namespace ProductReviewManagementUsingLINQ
                 Console.WriteLine(productid);
             }
         }
-
+        //UC-12
+        public void AllRecords_OrderByRating_OfId10()
+        {
+            var dataRecord = from record in table.AsEnumerable()
+                             where record.Field<int>("Product Id") == 10
+                             orderby record.Field<double>("Rating") descending
+                             select new
+                             {
+                                 product = record.Field<int>("Product Id"),
+                                 rating = record.Field<double>("Rating")
+                             };
+            foreach (var record in dataRecord)
+            {
+                Console.WriteLine(record.product+"  "+record.rating);
+            }
+        }
     }
 }

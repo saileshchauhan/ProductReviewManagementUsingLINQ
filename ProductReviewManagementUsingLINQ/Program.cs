@@ -28,10 +28,10 @@ namespace ProductReviewManagementUsingLINQ
             productReviews.Add(new ProductReview(33, 14, 3, "Average", false));
             productReviews.Add(new ProductReview(13, 14, 7, "Excellent", false));
             productReviews.Add(new ProductReview(5,  55, 3, "Average", false));
-            productReviews.Add(new ProductReview(17, 16, 1, "Defective", false));
-            productReviews.Add(new ProductReview(9, 10, 6, "Excellent", true));
-            productReviews.Add(new ProductReview(6, 56, 2, "Poor", false));
-            productReviews.Add(new ProductReview(6, 11, 3, "Average", false));
+            productReviews.Add(new ProductReview(10, 16, 1, "Defective", false));
+            productReviews.Add(new ProductReview(10, 10, 6, "Excellent", true));
+            productReviews.Add(new ProductReview(10, 56, 2, "Poor", false));
+            productReviews.Add(new ProductReview(10, 11, 3, "Average", false));
             productReviews.Add(new ProductReview(10, 15, 5, "Good", false));
             //UC-1
             //UC-2
@@ -49,13 +49,18 @@ namespace ProductReviewManagementUsingLINQ
                 //UC-6
                 manage.Skip_TopFiveRecords(productReviews);
                 //UC - 7 SIMILAR TO UC - 5
+                /*Implemented LINQ IN Data Table*/
                 //UC - 8
                 DataTableImplementation dataTable = new DataTableImplementation();
                 dataTable.AddRecords_To_DataTabe(productReviews);
                 ////UC-9
-                //dataTable.PrintRecords_With_IsLike_TrueFromDataTabe();
-                ////UC-11
+                dataTable.PrintRecords_With_IsLike_TrueFromDataTabe();
+                //UC-10
+                dataTable.AvearageRatingOfEachProductId();
+                //UC - 11
                 dataTable.AllRecords_ReviewContainsNice();
+                //UC-12
+                dataTable.AllRecords_OrderByRating_OfId10();
             }
             catch(Exception exception)
             {
